@@ -7,7 +7,7 @@ export const updateUserController = async (req, res, next) => {
     }
 
     try {
-        const user = await userModel.findOne({ _id: '6642ef5662a0269a2d681b55' });
+        const user = await userModel.findOne({ _id: req.user.userId });
         if (!user) {
             return res.status(404).json({ message: 'User not found' });
         }

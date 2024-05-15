@@ -43,7 +43,7 @@ userSchema.methods.matchPassword = async function (enteredPassword) {
 
 userSchema.methods.createJWT = function () { 
     return JWT.sign({
-        userID: this._id,
+        userId: this._id,
     },
         process.env.JWT_SECRET_KEY,
         {expiresIn:'1d'}
