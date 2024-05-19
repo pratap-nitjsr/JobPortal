@@ -1,6 +1,6 @@
 import express from 'express';
 import userAuth from '../middlewares/authMiddleware.js';
-import { createJobController, getAllJobsController, updateJobController,deleteJobController } from '../controllers/jobsController.js';
+import { createJobController, getAllJobsController, updateJobController,deleteJobController, jobStatsController } from '../controllers/jobsController.js';
 
 const router = express.Router();
 
@@ -11,5 +11,7 @@ router.get('/get-job', userAuth, getAllJobsController)
 router.patch('/update-job/:id', userAuth, updateJobController)
 
 router.delete('/delete-job/:id', userAuth, deleteJobController)
+
+router.get('/job-stats',userAuth, jobStatsController)
 
 export default router;
